@@ -1,0 +1,22 @@
+name: Teste GitHub Actions
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Listar versões do .NET pré-instaladas
+      run: dotnet --list-sdks
+
+    - name: Exibir versão default do .NET
+      run: dotnet --version
