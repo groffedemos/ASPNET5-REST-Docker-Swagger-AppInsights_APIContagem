@@ -1,0 +1,12 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: dotnet --list-sdks
+  displayName: 'Listar versões do .NET pré-instaladas'
+
+- script: dotnet --version
+  displayName: 'Exibir versão default do .NET'
